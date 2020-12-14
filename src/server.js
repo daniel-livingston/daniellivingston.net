@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/email", (req, res) => {
-	sendToMe(req, res, { ...req.body });
+	sendToMe(req, res, { ...req.body, email: req.body.email.trim() });
 });
 
 app.get("*", (req, res) => {
