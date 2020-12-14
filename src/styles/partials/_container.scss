@@ -1,0 +1,5 @@
+.container {
+	padding: 1.5rem;
+}
+
+@include responsive-width(".container", $breakpoint-laptop);

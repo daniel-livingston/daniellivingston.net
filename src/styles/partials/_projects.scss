@@ -1,0 +1,11 @@
+.project-container {
+	background-color: $alt-bg-color;
+}
+.projects {
+	h3 {
+		@include dynotherm;
+		@include neon($header-color);
+		text-align: center;
+		padding-bottom: 3rem;
+	}
+}

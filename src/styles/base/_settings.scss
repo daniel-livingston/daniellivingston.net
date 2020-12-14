@@ -1,0 +1,84 @@
+@use "sass:color";
+
+// Fonts
+@font-face {
+	font-family: "Dynotherm";
+	src: url("/fonts/Dynotherm/Dynotherm.eot");
+	src: url("/fonts/Dynotherm/Dynotherm.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Dynotherm/Dynotherm.woff2") format("woff2"),
+		url("/fonts/Dynotherm/Dynotherm.woff") format("woff"),
+		url("/fonts/Dynotherm/Dynotherm.ttf") format("truetype"),
+		url("/fonts/Dynotherm/Dynotherm.svg#Dynotherm") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+@mixin dynotherm {
+	font-family: "Dynotherm";
+}
+
+// Colors
+$bg-color: #111;
+// $alt-bg-color: #2f404d;
+$alt-bg-color: #111;
+$header-color: #85ebd9;
+$alt-color: #ff2a6d;
+$text-color: #e2dddf;
+$accent-color: #b0acb0;
+
+@mixin neon($color) {
+	color: $color;
+	text-shadow: 0 0 60px color.adjust($color, $lightness: -30%);
+}
+
+@mixin neon-frame($color) {
+	border: 3px solid $color;
+	border-radius: 0.5rem;
+	box-shadow: inset 0 0 30px color.adjust($color, $lightness: -30%),
+		0 0 30px color.adjust($color, $lightness: -30%);
+}
+
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 992px;
+$breakpoint-desktop: 1200px;
+
+@mixin responsive-width($selector, $breakpoint) {
+	#{$selector} {
+		width: 100%;
+	}
+
+	@media (min-width: $breakpoint) {
+		#{$selector} {
+			width: $breakpoint;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+$title-h1-size: 3.6rem;
+$title-h2-size: 1.6rem;
+$navbar-item-size: 1.2rem;
+$text-size: 1.2rem;
+
+@mixin responsive-font-size($selector, $font-size-in-mobile) {
+	#{$selector} {
+		font-size: $font-size-in-mobile;
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		#{$selector} {
+			font-size: $font-size-in-mobile * 1.33;
+		}
+	}
+
+	@media (min-width: $breakpoint-laptop) {
+		#{$selector} {
+			font-size: $font-size-in-mobile * 1.72;
+		}
+	}
+}
+
+$spacing-s: 1rem;
+$spacing-m: 2rem;

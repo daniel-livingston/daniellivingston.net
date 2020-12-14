@@ -1,0 +1,28 @@
+{
+	"name": "portfolio",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"dev": "concurrently \"npm run dev:sass\" \"npm run dev:start\"",
+		"dev:sass": "npm run sass -- --watch",
+		"dev:start": "env-cmd -f config/dev.env nodemon src/server.js",
+		"sass": "sass --style=compressed src/styles/style.scss dist/styles/index.min.css",
+		"start": "node src/server.js"
+	},
+	"author": "Daniel Livingston",
+	"license": "ISC",
+	"dependencies": {
+		"@sendgrid/mail": "^7.4.0",
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"express-session": "^1.17.1",
+		"serve-favicon": "^2.5.0",
+		"validator": "^13.5.2"
+	},
+	"devDependencies": {
+		"concurrently": "^5.3.0",
+		"env-cmd": "^10.1.0",
+		"nodemon": "^2.0.6",
+		"sass": "^1.30.0"
+	}
+}

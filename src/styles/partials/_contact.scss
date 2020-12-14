@@ -1,0 +1,52 @@
+@include responsive-font-size(".form-item label", 1.4rem);
+@include responsive-font-size(".form-item input, .form-item textarea", 1.2rem);
+@include responsive-font-size(".form button", 1.4rem);
+
+.form {
+	padding: 5rem;
+
+	.form-item {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: $spacing-m;
+		margin-top: $spacing-m;
+
+		label {
+			@include dynotherm;
+		}
+
+		.error-message {
+			color: $alt-color;
+			display: none;
+		}
+
+		input,
+		textarea {
+			background-color: $alt-bg-color;
+			color: $text-color;
+			padding: $spacing-s;
+			border: 1px solid $accent-color;
+			border-radius: 0.25rem;
+		}
+
+		.error {
+			border: 3px solid $alt-color;
+		}
+
+		::placeholder {
+			color: transparentize($color: $text-color, $amount: 0.3);
+			opacity: 1;
+		}
+
+		:-ms-input-placeholder,
+		::-ms-input-placeholder {
+			color: transparentize($color: $text-color, $amount: 0.3);
+		}
+	}
+
+	.button-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+	}
+}

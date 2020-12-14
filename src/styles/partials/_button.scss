@@ -1,0 +1,31 @@
+@include responsive-font-size(".button", 1rem);
+
+.button {
+	@include dynotherm;
+	background-color: $bg-color;
+	border: 1px solid $alt-color;
+	border-radius: 0.25rem;
+	color: $alt-color;
+	cursor: pointer;
+	padding: 0.5rem;
+	text-decoration: none;
+	transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+
+.button:hover {
+	background-color: $alt-color;
+	border-color: $bg-color;
+	color: $bg-color;
+}
+
+.button.disabled {
+	color: $accent-color;
+	border-color: $accent-color;
+	cursor: default;
+}
+
+.button.disabled:hover {
+	color: $accent-color;
+	border-color: $accent-color;
+	background-color: $bg-color;
+}

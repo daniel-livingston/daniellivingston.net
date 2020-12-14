@@ -1,0 +1,61 @@
+@include responsive-font-size(".about", $text-size);
+
+.about {
+	color: $text-color;
+
+	h3 {
+		@include dynotherm;
+		@include neon($header-color);
+		padding-bottom: 3rem;
+		text-align: center;
+	}
+}
+
+.intro {
+	padding: 0 0 3rem 0;
+}
+
+.skills {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+
+	.skill-section {
+		padding: $spacing-m;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		svg {
+			width: 32px;
+			height: auto;
+			fill: $header-color;
+		}
+
+		h4,
+		h5 {
+			@include neon($header-color);
+			padding: 2rem;
+			text-align: center;
+		}
+	}
+
+	.skill-section-left {
+		border-bottom: 3px solid $header-color;
+		border-right: none;
+	}
+}
+
+@media (min-width: $breakpoint-tablet) {
+	.skills {
+		flex-direction: row;
+		align-items: flex-start;
+
+		.skill-section-left {
+			border-bottom: none;
+			border-right: 3px solid $header-color;
+		}
+	}
+}

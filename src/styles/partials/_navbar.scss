@@ -1,0 +1,75 @@
+@include responsive-font-size(".navbar li", 1.2rem);
+
+.navbar {
+	background-color: $alt-bg-color;
+	padding: 1.5rem;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100vw;
+	margin-bottom: 2rem;
+
+	.navbar-items {
+		display: none;
+		flex-direction: row;
+		justify-content: space-evenly;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li a {
+		@include dynotherm;
+		color: $accent-color;
+		text-decoration: none;
+	}
+
+	li a.active {
+		@include neon($header-color);
+		border-bottom: 1px solid $header-color;
+	}
+
+	.mobile-nav {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.mobile-navbar {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+
+		#mobile-nav-button {
+			background-color: transparent;
+			border: none;
+			outline: none;
+		}
+
+		svg {
+			fill: $header-color;
+		}
+	}
+
+	.mobile-dropdown {
+		display: none;
+		flex-direction: column;
+		align-items: flex-end;
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			padding: 0.75rem;
+		}
+	}
+}
+
+@media (min-width: $breakpoint-tablet) {
+	.navbar .navbar-items {
+		display: flex;
+	}
+
+	.navbar .mobile-nav {
+		display: none;
+	}
+}

@@ -1,0 +1,54 @@
+@include responsive-font-size(".tile-title", 1.4rem);
+@include responsive-font-size(".tile-text", 1rem);
+
+.tile-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	.tile {
+		background-color: $bg-color;
+		border-radius: 0.25rem;
+		width: 240px;
+		height: 360px;
+		display: flex;
+		flex-direction: column;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1rem;
+
+		.tile-img {
+			border-radius: 0.25rem;
+			height: 60%;
+			object-fit: cover;
+		}
+
+		.tile-body {
+			padding: 1.5rem;
+
+			.tile-title {
+				@include neon($header-color);
+				border-bottom: 1px solid $header-color;
+			}
+		}
+	}
+}
+
+@media (min-width: $breakpoint-tablet) {
+	.tile-wrapper {
+		.tile {
+			width: 320px;
+			height: 480px;
+		}
+	}
+}
+
+@media (min-width: $breakpoint-laptop) {
+	.tile-wrapper {
+		.tile {
+			width: 400px;
+			height: 600px;
+		}
+	}
+}
