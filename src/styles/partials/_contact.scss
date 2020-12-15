@@ -1,9 +1,5 @@
-@include responsive-font-size(".form-item label", 1.4rem);
-@include responsive-font-size(".form-item input, .form-item textarea", 1.2rem);
-@include responsive-font-size(".form button", 1.4rem);
-
 .form {
-	padding: 5rem;
+	padding: 2rem;
 
 	.form-item {
 		display: flex;

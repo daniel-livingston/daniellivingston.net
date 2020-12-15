@@ -57,28 +57,7 @@ $breakpoint-desktop: 1200px;
 	}
 }
 
-$title-h1-size: 3.6rem;
-$title-h2-size: 1.6rem;
 $navbar-item-size: 1.2rem;
-$text-size: 1.2rem;
-
-@mixin responsive-font-size($selector, $font-size-in-mobile) {
-	#{$selector} {
-		font-size: $font-size-in-mobile;
-	}
-
-	@media (min-width: $breakpoint-tablet) {
-		#{$selector} {
-			font-size: $font-size-in-mobile * 1.33;
-		}
-	}
-
-	@media (min-width: $breakpoint-laptop) {
-		#{$selector} {
-			font-size: $font-size-in-mobile * 1.72;
-		}
-	}
-}
 
 $spacing-s: 1rem;
 $spacing-m: 2rem;

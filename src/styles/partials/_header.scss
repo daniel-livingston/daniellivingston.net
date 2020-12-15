@@ -21,7 +21,6 @@ header {
 		@include dynotherm;
 		@include neon($header-color);
 		display: inline;
-		font-size: $title-h1-size;
 		padding: 1rem;
 		text-align: center;
 	}
@@ -29,10 +28,6 @@ header {
 	h2 {
 		@include dynotherm;
 		@include neon($header-color);
-		font-size: $title-h2-size;
 		text-align: center;
 	}
 }
-
-@include responsive-font-size(".title h1", 4.8rem);
-@include responsive-font-size(".title h2", 1.4rem);

@@ -58,13 +58,20 @@
 		coordinates.forEach(([x, y]) => drawStar(x, y));
 	}
 
+	let width;
 	window.onload = (e) => {
+		width = window.innerWidth;
 		handleCanvasSizing();
 		generateStarMap();
 	};
 
 	window.onresize = (e) => {
+		if (width === window.innerWidth) {
+			return;
+		}
+
 		handleCanvasSizing();
 		generateStarMap();
+		width = window.innerWidth;
 	};
 })();
